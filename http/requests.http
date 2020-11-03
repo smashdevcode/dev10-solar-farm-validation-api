@@ -1,0 +1,63 @@
+
+GET /solarpanels HTTP/1.1
+Host: localhost:8080
+
+###
+
+GET /solarpanels/the%20ridge HTTP/1.1
+Host: localhost:8080
+
+###
+
+GET /solarpanels/the%20ridge/1/1 HTTP/1.1
+Host: localhost:8080
+
+###
+
+POST /solarpanels HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+}
+
+###
+
+POST /solarpanels HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "section": "Shadow Lands",
+  "row": 1,
+  "column": 1,
+  "yearInstalled": 2000,
+  "material": "POLY_SI",
+  "isTracking": true
+}
+
+###
+
+PUT /solarpanels/19 HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "id": 19,
+  "section": "Shadow Lands",
+  "row": 10,
+  "column": 10,
+  "yearInstalled": 2020,
+  "material": "POLY_SI",
+  "isTracking": true
+}
+
+###
+
+GET /solarpanels/shadow%20lands/10/10 HTTP/1.1
+Host: localhost:8080
+
+###
+
+DELETE /solarpanels/shadow%20lands/10/10 HTTP/1.1
+Host: localhost:8080
